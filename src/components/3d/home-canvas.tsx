@@ -26,7 +26,7 @@ const HomeCanvas: FC = () => {
     <div className="w-screen h-screen">
       <Suspense
         fallback={
-          <div className="w-screen h-screen flex justify-center items-center">
+          <div className="w-screen h-screen flex justify-center items-center bg-black">
             <div className="w-16 h-16">
               <Loading />
             </div>
