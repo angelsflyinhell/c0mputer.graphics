@@ -19,6 +19,7 @@ import { KernelSize, Resolution, BlendFunction } from "postprocessing";
 import { Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 
+
 const HomeCanvas: FC = () => {
   const [dpr, setDpr] = useState(1.5);
 
