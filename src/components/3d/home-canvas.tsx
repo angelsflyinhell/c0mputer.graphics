@@ -19,12 +19,11 @@ import { KernelSize, Resolution, BlendFunction } from "postprocessing";
 import { Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 
-
 const HomeCanvas: FC = () => {
   const [dpr, setDpr] = useState(1.5);
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen absolute">
       <Suspense
         fallback={
           <div className="w-screen h-screen flex justify-center items-center bg-black">
@@ -58,17 +57,6 @@ const HomeCanvas: FC = () => {
               darkness={0.75} // vignette darkness
               eskil={false} // Eskil's vignette technique
               blendFunction={BlendFunction.NORMAL} // blend mode
-            />
-            <Glitch
-              delay={new Vector2(1.5, 3.5)} // min and max glitch delay
-              duration={new Vector2(0.1, 0.2)} // min and max glitch duration
-              strength={new Vector2(0.1, 0.3)} // min and max glitch strength
-              mode={GlitchMode.SPORADIC} // glitch mode
-              active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
-              ratio={0.99} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
-            />
-            <Pixelation
-              granularity={5} // pixel granularity
             />
             <Autofocus />
           </EffectComposer>
@@ -105,7 +93,7 @@ function VideoText(props: any) {
       letterSpacing={-0.06}
       {...props}
     >
-      c0m
+      C0M
       <meshBasicMaterial toneMapped={false}>
         <videoTexture attach="map" args={[video]} />
       </meshBasicMaterial>
